@@ -11,11 +11,13 @@ def getData(file):
 
 def calcul(listActions):
     actions = sorted(listActions, key= lambda a: a[2], reverse=True)
+
     listeportefeuille = []
     cout = 0
     gain = 0
     for action in actions:
         if cout + action[1] <= 500:
+
             listeportefeuille.append(action)
             cout += action[1]
             gain += action[3]
@@ -23,5 +25,10 @@ def calcul(listActions):
 
 
 if __name__ == "__main__":
+    print("Solution Fichien 1 :")
     FileActions = "Data1sienna.csv"
     calcul(getData(FileActions))
+
+    print("Solution Fichien 2 :")
+    File2Actions = "Data2sienna.csv"
+    calcul(getData(File2Actions))
